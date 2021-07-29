@@ -59,7 +59,6 @@ class App extends React.Component {
   }
 
   sendForEmotionAnalysis = () => {
-
     this.setState({sentiment:false});
     let url = ".";
     if(this.state.mode === "url") {
@@ -70,7 +69,7 @@ class App extends React.Component {
     fetch(url).then((response)=>{
       response.json().then((data)=>{
       this.setState({sentimentOutput:<EmotionTable emotions={data}/>});
-  })})  ;
+  })});
   }
   
 

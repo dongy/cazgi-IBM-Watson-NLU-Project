@@ -38,8 +38,9 @@ app.get("/url/emotion", (req,res) => {
         }
     };
     naturalLanguageUnderstanding.analyze(analyzeParams)
-    .then(analysisResults => {
-        return res.send(analysisResults.result.emotion.document.emotion);
+        .then(analysisResults => {
+            console.log(JSON.stringify(analysisResults, null, 2));
+            return res.send(analysisResults.result.emotion.document.emotion);
     }).catch(err => {
         console.log('error:', err);
         res.send(err.toString());
@@ -57,9 +58,9 @@ app.get("/url/sentiment", (req,res) => {
     };
 
     naturalLanguageUnderstanding.analyze(analyzeParams)
-    .then(analysisResults => {
-        console.log(JSON.stringify(analysisResults, null, 2));
-        return res.send(analysisResults.result.sentiment.document.label);
+        .then(analysisResults => {
+            console.log(JSON.stringify(analysisResults, null, 2));
+            return res.send(analysisResults.result.sentiment.document.label);
     }).catch(err => {
         console.log('error:', err);
         res.send(err.toString());
@@ -75,9 +76,10 @@ app.get("/text/emotion", (req,res) => {
             'emotion': {}
         }
     };
+
     naturalLanguageUnderstanding.analyze(analyzeParams)
         .then(analysisResults => {
-            // console.log(JSON.stringify(analysisResults, null, 2));
+            console.log(JSON.stringify(analysisResults, null, 2));
             res.send(analysisResults.result.emotion.document.emotion);
     }).catch(err => {
         res.send(err.toString());

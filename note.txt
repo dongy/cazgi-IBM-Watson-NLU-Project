@@ -1,0 +1,22 @@
+Steps
+
+git clone
+cd cazgi-IBM-Watson-NLU-Project
+sudo npm install npm@latest -g -s
+
+cd cazgi-IBM-Watson-NLU-Project/sentimentAnalyzeClient
+npm install --save -s
+npm start and check Client running on port 3000
+npm run-script build to copy Client to Server side
+
+cd cazgi-IBM-Watson-NLU-Project/sentimentAnalyzeServer
+npm install --save -s
+npm install --save -s ibm-watson@6.1.1
+npm install --save -s dotenv@10.0.0
+
+Last
+Build Client and copy to Server client/.
+Run npm start in the sentimentAnalyzeServer
+
+########
+Deploy to Cloud Fountry
